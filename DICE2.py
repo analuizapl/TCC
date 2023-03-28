@@ -22,8 +22,9 @@ def prepareDataBase(df):
 menu_options = {
     1: 'Titanic',
     2: 'Adult',
-    3: 'Option 3',
-    4: 'Exit',
+    3: 'Banana',
+    4: 'Banknote',
+    #4: 'Exit',
 }
 
 def print_menu():
@@ -31,8 +32,8 @@ def print_menu():
         print (key, '--', menu_options[key] )
 
 def titanic():
-    train = pd.read_csv('Titanic/train.csv')
-    test = pd.read_csv('Titanic/test.csv')
+    train = pd.read_csv('https://raw.githubusercontent.com/analuizapl/TCC/main/Titanic/train.csv') 
+    test = pd.read_csv('https://raw.githubusercontent.com/analuizapl/TCC/main/Titanic/test.csv')
 
     # verificando as dimensões do DataFrame
     print("Variáveis:\t{}\nEntradas:\t{}".format(train.shape[1], train.shape[0]))
@@ -75,48 +76,32 @@ def titanic():
     dice(df_merged,outcome_name_titanic)
 
 def adult():
-    train = pd.read_csv('adult/adult_processada.csv')
 
-    # verificando as dimensões do DataFrame
-    print("Variáveis:\t{}\nEntradas:\t{}".format(train.shape[1], train.shape[0]))
+    db = pd.read_csv('https://raw.githubusercontent.com/analuizapl/TCC/main/adult/adult_processada.csv')
 
-    # identificar o tipo de cada variável
-    #display(train.dtypes)
+    # converter 'Above/Below 50K' em 0 e 1
+    db['Above/Below 50K'] = db['Above/Below 50K'].map({'<=50K': 0, '>50K': 1})
 
-    print("Porcentagem valores faltantes")
-    display(train.isnull().sum() / train.shape[0]).sort_values(ascending=False)
-    '''
-    # salvar os índices dos datasets para recuperação posterior
-    train_idx = train.shape[0]
-    # concatenar treino e teste em um único DataFrame2
-    
-    df_merged = pd.concat(objs=[train, test], axis=0).reset_index(drop=True)
+    outcome_name = 'Above/Below 50K'
+    prepareDataBase(db)
+    dice(db,outcome_name)
 
-    print("df_merged.shape: ({} x {})".format(df_merged.shape[0], df_merged.shape[1]))
+def banana():
+  
+    db = pd.read_csv('https://raw.githubusercontent.com/analuizapl/TCC/main/Banana/banana.csv')
 
-    df_merged.drop(['PassengerId', 'Name', 'Ticket', 'Cabin'], axis=1, inplace=True)
+    outcome_name = 'Class'
+    prepareDataBase(db)
+    dice(db,outcome_name)
 
-    # completar ou apagar valores faltantes nos datasets de treino e teste
-    df_merged.isnull().sum()
-    # age
-    age_median = df_merged['Age'].median()
-    df_merged['Age'].fillna(age_median, inplace=True)
+def banknote():
+  
+    db = pd.read_csv('https://raw.githubusercontent.com/analuizapl/TCC/main/Banknote/BankNote_Authentication.csv')
 
-    # fare
-    fare_median = df_merged['Fare'].median()
-    df_merged['Fare'].fillna(fare_median, inplace=True)
+    outcome_name = 'class'
+    prepareDataBase(db)
+    dice(db,outcome_name)
 
-    # embarked
-    embarked_top = df_merged['Embarked'].value_counts()[0]
-    df_merged['Embarked'].fillna(embarked_top, inplace=True)
-    df_merged['Embarked'] = df_merged['Embarked'].map({'C': 0, 'S': 1})
-
-    # converter 'Sex' em 0 e 1
-    df_merged['Sex'] = df_merged['Sex'].map({'male': 0, 'female': 1})
-    outcome_name_titanic = 'Survived'
-    prepareDataBase(df_merged)
-    dice(df_merged,outcome_name_titanic)
-    '''
 def dice(df,outcome_name):
 
     continuous_features = df.drop(outcome_name, axis=1).columns.tolist()
@@ -165,10 +150,11 @@ if option == 1:
 elif option == 2:
   adult()
 elif option == 3:
-  print('Handle option \'Option 3\'')
+  banana()
 elif option == 4:
-  print('Thanks message before exiting')
-  exit()
+  banknote()
+#elif option == 4:
+#  exit()
 else:
   print('Invalid option. Please enter a number between 1 and 4.')
 
