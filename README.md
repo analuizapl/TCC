@@ -12,6 +12,24 @@ My analysis used the following databases
 Name| Link 
 --- | --- 
 Banana | [Link](https://www.kaggle.com/datasets/saranchandar/standard-classification-banana-dataset)
+Haberman | [Link](https://www.kaggle.com/datasets/gilsousa/habermans-survival-data-set)         
+Banknote | [Link](https://archive.ics.uci.edu/ml/datasets/banknote+authentication)
+Phoneme    | [Link](https://datahub.io/machine-learning/phoneme)      
+Mammographic masses | [Link](https://archive.ics.uci.edu/ml/datasets/Mammographic+Mass)
+Room   Occupancy | [Link](https://www.kaggle.com/datasets/sachinsharma1123/room-occupancy)          
+Liver disorders(BUPA) | [Link](https://networkrepository.com/liver-disorders-bupa.php)
+Vertebral Column | [Link](http://archive.ics.uci.edu/ml/datasets/vertebral+column)
+Monk | [Link](https://archive.ics.uci.edu/ml/datasets/MONK's+Problems)           
+Diabetes | [Link](https://www.kaggle.com/datasets/mathchi/diabetes-data-set)  
+Employee   Future | [Link](https://www.kaggle.com/datasets/tejashvi14/employee-future-prediction)        
+Breast   Cancer Coimbra | [Link](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Coimbra)
+Compass | [Link](https://github.com/adebayoj/fairml/blob/master/doc/example\_notebooks/propublica\_data\_for\_fairml.csv)
+Indian   Liver Patient | [Link](https://archive.ics.uci.edu/ml/datasets/ILPD+(Indian+Liver+Patient+Dataset)     
+Magic | [Link](https://archive.ics.uci.edu/ml/datasets/magic+gamma+telescope)    
+Phishing   Website | [Link](https://www.kaggle.com/datasets/eswarchandt/phishing-website-detector?select=phishing.csv)
+Heart   Failure | [Link](https://www.kaggle.com/datasets/andrewmvd/heart-failure-clinical-data)        
+Heart Attack | [Link](https://www.kaggle.com/datasets/nareshbhat/health-care-data-set-on-heart-attack-possibility)
+
 
 # Notes
 This code assumes that the input dataset contains the target variable (outcome) column, and the features used for model training are all other columns.
