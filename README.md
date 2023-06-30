@@ -24,12 +24,15 @@ Diabetes | [Link](https://www.kaggle.com/datasets/mathchi/diabetes-data-set)
 Employee   Future | [Link](https://www.kaggle.com/datasets/tejashvi14/employee-future-prediction)        
 Breast   Cancer Coimbra | [Link](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Coimbra)
 Compass | [Link](https://github.com/adebayoj/fairml/blob/master/doc/example\_notebooks/propublica\_data\_for\_fairml.csv)
-Indian   Liver Patient | [Link](https://archive.ics.uci.edu/ml/datasets/ILPD+(Indian+Liver+Patient+Dataset)     
+Indian   Liver Patient | [Link](https://archive.ics.uci.edu/ml/datasets/ILPD+(Indian+Liver+Patient+Dataset))     
 Magic | [Link](https://archive.ics.uci.edu/ml/datasets/magic+gamma+telescope)    
 Phishing   Website | [Link](https://www.kaggle.com/datasets/eswarchandt/phishing-website-detector?select=phishing.csv)
 Heart   Failure | [Link](https://www.kaggle.com/datasets/andrewmvd/heart-failure-clinical-data)        
 Heart Attack | [Link](https://www.kaggle.com/datasets/nareshbhat/health-care-data-set-on-heart-attack-possibility)
 
+# Output
+The code generates counterfactual explanations in the form of a DataFrame, which is saved as "output.csv" in the same directory as the input dataset.
+Additionally, the execution time is recorded and saved in a file named "executiontime.txt".
 
 # Notes
 This code assumes that the input dataset contains the target variable (outcome) column, and the features used for model training are all other columns.
